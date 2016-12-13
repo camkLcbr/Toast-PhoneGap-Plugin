@@ -321,6 +321,7 @@ static id styling;
 
     NSNumber * cornerRadius = styling[@"cornerRadius"];
     wrapperView.layer.cornerRadius = cornerRadius == nil ? CSToastCornerRadius : [cornerRadius floatValue];
+    wrapperView.layer.borderColor = [UIColor redColor].CGColor;
     
     if (CSToastDisplayShadow) {
         wrapperView.layer.shadowColor = [UIColor whiteColor].CGColor;
