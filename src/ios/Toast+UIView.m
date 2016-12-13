@@ -225,10 +225,11 @@ static id styling;
 
     UIView *activityView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CSToastActivityWidth, CSToastActivityHeight)];
     activityView.center = [self centerPointForPosition:position withToast:activityView withAddedPixelsY:0];
-    activityView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:CSToastOpacity];
+    activityView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:CSToastOpacity];
     activityView.alpha = 0.0;
     activityView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
     activityView.layer.cornerRadius = CSToastCornerRadius;
+    activityView.layer.borderColor = [UIColor redColor].CGColor
 
     if (CSToastDisplayShadow) {
         activityView.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -361,7 +362,7 @@ static id styling;
     
     if (title != nil) {
         NSString * titleLabelTextColor = styling[@"textColor"];
-        UIColor *theTitleLabelTextColor = titleLabelTextColor == nil ? [UIColor whiteColor] : [self colorFromHexString:titleLabelTextColor];
+        UIColor *theTitleLabelTextColor = titleLabelTextColor == nil ? [UIColor redColor] : [self colorFromHexString:titleLabelTextColor];
 
         titleLabel = [[UILabel alloc] init];
         titleLabel.numberOfLines = CSToastMaxTitleLines;
@@ -381,7 +382,7 @@ static id styling;
     
     if (message != nil) {
         NSString * messageLabelTextColor = styling[@"textColor"];
-        UIColor *theMessageLabelTextColor = messageLabelTextColor == nil ? [UIColor whiteColor] : [self colorFromHexString:messageLabelTextColor];
+        UIColor *theMessageLabelTextColor = messageLabelTextColor == nil ? [UIColor redColor] : [self colorFromHexString:messageLabelTextColor];
 
         messageLabel = [[UILabel alloc] init];
         messageLabel.numberOfLines = CSToastMaxMessageLines;
