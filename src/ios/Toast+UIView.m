@@ -320,7 +320,7 @@ static id styling;
     wrapperView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
 
     NSNumber * cornerRadius = styling[@"cornerRadius"];
-    CGFloat borderWidth = 3.0f;
+    CGFloat borderWidth = 2.0f;
     wrapperView.layer.cornerRadius = cornerRadius == nil ? CSToastCornerRadius : [cornerRadius floatValue];
     wrapperView.layer.borderColor = [UIColor redColor].CGColor;
     wrapperView.layer.borderWidth = borderWidth;
